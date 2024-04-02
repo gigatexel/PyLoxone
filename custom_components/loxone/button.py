@@ -83,7 +83,7 @@ class LoxoneNfcCTButton(LoxoneEntity, ButtonEntity):
 
     def press(self, **kwargs):
         """Push the button. The last character is the output number that needs to be activated."""
-        self.hass.bus.async_fire(SECUREDSENDDOMAIN, dict(uuid=self.uuidAction, value="output/"+self.name[-1]))
+        self.hass.bus.async_fire(SENDDOMAIN, dict(uuid=self.uuidAction, value="output/"+self.name[-1]))
 
     @property
     def extra_state_attributes(self):
