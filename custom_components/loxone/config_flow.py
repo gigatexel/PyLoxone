@@ -130,3 +130,5 @@ class LoxoneOptionsFlowHandler(OptionsFlow):
             data_schema=vol.Schema(options),
             errors=errors,
         )
+
+
