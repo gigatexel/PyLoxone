@@ -122,7 +122,11 @@ class LoxoneDigitalSensor(LoxoneEntity, BinarySensorEntity):
         self._on_state = STATE_ON
         self._off_state = STATE_OFF
         self._attr_available = True
-        self._attr_device_class = LOXONE_DEVICE_CLASS_MAP.get(self.type)
+        if self.type in LOXONE_DEVICE_CLASS_MAP:
+            self._attr_device_class = LOXONE_DEVICE_CLASS_MAP[self.type]
+        else:
+            self._attr_device_class = None
+
         
 
 
